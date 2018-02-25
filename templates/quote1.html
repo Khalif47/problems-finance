@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    quote
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('quote') }}" method="post">
+        <p>The share price of {{ n["symbol"]}} is {{ n["price"] }}</p>
+    </form>
+{% endblock %}

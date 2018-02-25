@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Symbol</th>
+        <th scope="col">Name</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Price</th>
+        <th scope="col">TOTAL</th>
+        <th scope="col">Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for symbol, name, share, price, total, time in x %}
+    <tr>
+        <td>{{ symbol }}</td>
+        <td>{{ name }}</td>
+        <td>{{ share }}</td>
+        <td>${{ price }}</td>
+        <td>${{ total }}</td>
+        <td>{{ time }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    <thead>
+    <tr>
+        <th scope="col">CASH</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">${{ cash }}</th>
+
+    </tr>
+    </thead>
+</table>
+{% endblock %}
